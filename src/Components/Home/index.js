@@ -11,7 +11,7 @@ function Home(props) {
 
             <center>
                 <h1> {props.count} </h1>
-                <Button size="small" color="green" icon="like" onClick={() => {
+                <Button size="small" color="green" onClick={() => {
                     props.dispatch(increment())
                 }}>UP</Button>
                 <Button size="small" color="green" onClick={() => {
