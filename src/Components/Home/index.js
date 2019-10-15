@@ -1,18 +1,31 @@
 import React from "react"
 import { connect } from 'react-redux'
-import { increment,decrement } from '../../actions/count'
+import { Button,Menu,Rating } from 'semantic-ui-react'
+import { increment, decrement } from '../../actions/count'
+import { Link } from 'react-router-dom'
 
- function Home (props) {
+function Home(props) {
     return (
         <div>
             <h1>Home Page</h1>
-            <h3> {props.count} </h3>
-            <button onClick = {() => {
-                props.dispatch(increment())
-            }}>UP</button>
-             <button onClick = {() => {
-                props.dispatch(decrement())
-            }}>DOWN</button>
+
+            <center>
+                <h1> {props.count} </h1>
+                <Button size="small" color="green" icon="like" onClick={() => {
+                    props.dispatch(increment())
+                }}>UP</Button>
+                <Button size="small" color="green" onClick={() => {
+                    props.dispatch(decrement())
+                }}>DOWN</Button>
+            </center>
+            <Rating rating={props.count/2} maxRating={props.count} />
+            
+
+            {/* <Menu>
+                <Menu.Item as={Link} to="/">
+                    Home
+            </Menu.Item>
+            </Menu> */}
         </div>
     )
 }
@@ -20,7 +33,7 @@ import { increment,decrement } from '../../actions/count'
 
 const mapStateToProps = (state) => {
     return {
-        count:state.count
+        count: state.count
     }
 }
 

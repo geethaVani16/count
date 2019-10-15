@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 // import './index.css';
 import App from './App';
 import { Provider } from 'react-redux'
+import 'semantic-ui/dist/semantic.min.css';
 
 import configureStore from './store/configureStore'
 
