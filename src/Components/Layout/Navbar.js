@@ -4,6 +4,7 @@ import Example from '../rxjs/rxjs'
 import Home from '../Home/index'
 import PostList from "../Posts/List"
 import PostShow from '../Posts/Show.js'
+import FormikForm from '../formikform/FormikForm'
 
 
 
@@ -15,10 +16,12 @@ class Navbar extends React.Component {
                 <BrowserRouter>
                     <div >
                         <Link to='/home'>Home ||</Link> 
-                        <Link to='/posts'> Posts</Link>
+                        <Link to='/posts'> Posts |</Link>
+                        <Link to='/form'>| Formikform</Link>
 
                         <Route path='/home' component={Home} />
                         <Route path='/posts' component={PostList} exact={true} />
+                        <Route path='/form' component={FormikForm} exact={true} />
                         <Route path='/posts/:id' component={PostShow} exact={true} />
                         <Example/>
                     </div>
